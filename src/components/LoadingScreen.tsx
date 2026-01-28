@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import loadingSpiritual from '@/assets/loading-spiritual.png';
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -30,17 +31,19 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8">
       <div className="max-w-md w-full text-center animate-fade-in-up">
-        {/* Animated Icon */}
+        {/* Spiritual Image */}
         <div className="relative mb-8">
-          <div className="w-32 h-32 mx-auto relative">
-            <div className="absolute inset-0 rounded-full border-4 border-gold/20" />
+          <div className="absolute inset-0 bg-gold/20 rounded-full blur-3xl animate-pulse" />
+          <div className="relative w-48 h-48 mx-auto">
+            <img 
+              src={loadingSpiritual} 
+              alt="Análise espiritual"
+              className="w-full h-full object-cover rounded-full border-4 border-gold/30 shadow-2xl"
+            />
             <div 
               className="absolute inset-0 rounded-full border-4 border-gold border-t-transparent animate-spin"
               style={{ animationDuration: '2s' }}
             />
-            <div className="absolute inset-4 rounded-full bg-secondary/50 flex items-center justify-center">
-              <span className="text-4xl animate-pulse">✝️</span>
-            </div>
           </div>
         </div>
 
