@@ -3,24 +3,25 @@ import { productFeatures } from '@/data/quizData';
 
 const ProductChecklist = () => {
   return (
-    <div className="sacred-card">
-      <h3 className="font-cinzel text-lg text-gold mb-4 text-center">
+    <div className="w-full">
+      <h3 className="font-cinzel text-lg text-gold mb-4 text-center text-shadow-gold">
         O que você vai receber:
       </h3>
-      <ul className="space-y-3">
+      <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
         {productFeatures.map((feature, index) => (
-          <li 
+          <div 
             key={index}
-            className="flex items-center gap-3 text-foreground/90"
+            className="sacred-card !p-3 flex flex-col items-center justify-center text-center gap-1 hover:border-gold/50 transition-all duration-300"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <span className="w-6 h-6 rounded-full bg-cta-green flex items-center justify-center flex-shrink-0">
-              <Check size={14} className="text-white" />
+            <span className="text-2xl mb-1">{feature.icon}</span>
+            <span className="w-5 h-5 rounded-full bg-cta-green flex items-center justify-center flex-shrink-0">
+              <Check size={12} className="text-white" />
             </span>
-            <span className="font-lora">{feature}</span>
-          </li>
+            <span className="font-lora text-xs text-foreground/90 leading-tight">{feature.title}</span>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

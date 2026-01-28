@@ -37,7 +37,7 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
             Os três grandes Arcanjos — <span className="text-gold">São Miguel</span>, <span className="text-gold">São Gabriel</span> e <span className="text-gold">São Rafael</span> — são poderosos intercessores que Deus nos deu para nos guiar, proteger e curar.
           </p>
           <p className="text-foreground/90 leading-relaxed font-medium">
-            <span className="text-gold">Não ignore esse chamado.</span> Responda este quiz e descubra como fortalecer sua jornada espiritual com a intercessão da Trindade dos Arcanjos.
+            Responda este quiz e descubra como fortalecer sua jornada espiritual com a intercessão da Trindade dos Arcanjos.
           </p>
         </div>
 

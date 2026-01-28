@@ -47,19 +47,11 @@ const QuizQuestionCard = ({
         <div className="sacred-card">
           {/* Question Image */}
           <div className="relative mb-6 rounded-lg overflow-hidden">
-            <div className="aspect-video bg-secondary/50 flex items-center justify-center">
-              <div className="text-center p-4">
-                <div className="text-6xl mb-2">
-                  {question.theme === "Orações" && "🙏"}
-                  {question.theme === "Novenas" && "📿"}
-                  {question.theme === "Rosário" && "📿"}
-                  {question.theme === "Meditação" && "🕯️"}
-                  {question.theme === "Leituras" && "📖"}
-                  {question.theme === "Devocional" && "✝️"}
-                </div>
-                <p className="text-gold/70 text-sm">{question.theme}</p>
-              </div>
-            </div>
+            <img 
+              src={question.image} 
+              alt={question.theme}
+              className="w-full aspect-square object-cover rounded-lg"
+            />
           </div>
 
           {/* Question */}

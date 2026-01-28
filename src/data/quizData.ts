@@ -1,3 +1,10 @@
+import quizOracoes from '@/assets/quiz-oracoes.png';
+import quizNovenas from '@/assets/quiz-novenas.png';
+import quizRosario from '@/assets/quiz-rosario.png';
+import quizMeditacao from '@/assets/quiz-meditacao.png';
+import quizLeituras from '@/assets/quiz-leituras.png';
+import quizDevocional from '@/assets/quiz-devocional.png';
+
 export interface QuizQuestion {
   id: number;
   theme: string;
@@ -17,7 +24,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Tenho dificuldade em manter uma rotina de oração",
       "Gostaria de aprofundar minha vida de oração"
     ],
-    image: "/images/quiz-oracoes.jpg"
+    image: quizOracoes
   },
   {
     id: 2,
@@ -29,7 +36,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Nunca fiz uma novena completa",
       "Quero aprender a fazer novenas poderosas"
     ],
-    image: "/images/quiz-novenas.jpg"
+    image: quizNovenas
   },
   {
     id: 3,
@@ -41,7 +48,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Tenho vontade de começar a rezar",
       "Quero aprofundar essa devoção"
     ],
-    image: "/images/quiz-rosario.jpg"
+    image: quizRosario
   },
   {
     id: 4,
@@ -53,7 +60,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Não conheço bem essas práticas",
       "Desejo aprender a meditar espiritualmente"
     ],
-    image: "/images/quiz-meditacao.jpg"
+    image: quizMeditacao
   },
   {
     id: 5,
@@ -65,7 +72,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Tenho dificuldade em manter o hábito",
       "Quero desenvolver esse hábito"
     ],
-    image: "/images/quiz-leituras.jpg"
+    image: quizLeituras
   },
   {
     id: 6,
@@ -77,24 +84,24 @@ export const quizQuestions: QuizQuestion[] = [
       "Através da intercessão dos Arcanjos",
       "Todas as anteriores"
     ],
-    image: "/images/quiz-devocional.jpg"
+    image: quizDevocional
   }
 ];
 
 export const productFeatures = [
-  "+110 Orações",
-  "Novenas",
-  "Rosário",
-  "Meditação",
-  "Leituras",
-  "Devocional",
-  "E mais…"
+  { title: "+110 Orações", icon: "🙏" },
+  { title: "Novenas", icon: "📿" },
+  { title: "Rosário", icon: "✝️" },
+  { title: "Meditação", icon: "🕯️" },
+  { title: "Leituras", icon: "📖" },
+  { title: "Devocional", icon: "⛪" },
+  { title: "E mais…", icon: "✨" }
 ];
 
 export const faqItems = [
   {
     question: "O que é a Trindade dos Arcanjos?",
-    answer: "A Trindade dos Arcanjos é um guia devocional completo com orações, novenas e meditações dedicadas aos três grandes Arcanjos: São Miguel, São Gabriel e São Rafael. Um material único para fortalecer sua fé e proteção espiritual."
+    answer: "A Trindade dos Arcanjos é um guia devocional completo com mais de 110 orações, leituras, novenas, meditações, devocional, rosário e muito mais, dedicadas aos três grandes Arcanjos: São Miguel, São Gabriel e São Rafael. Um material único para fortalecer seu vínculo com Deus, sua fé e proteção espiritual."
   },
   {
     question: "Como vou receber o material?",
