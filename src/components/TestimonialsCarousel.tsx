@@ -101,6 +101,10 @@ const TestimonialsCarousel = ({ onCheckout }: TestimonialsCarouselProps) => {
       >
         Quero Meu Propósito com Deus
       </button>
+      <div className="mt-3 text-center">
+        <p className="text-foreground/50 text-sm line-through">De R$97</p>
+        <p className="text-gold font-cinzel text-xl font-bold">por apenas R$47,00</p>
+      </div>
     </div>
   );
 };
