@@ -127,7 +127,7 @@ const Index = () => {
           key={`intro-${introStep}`}
           question={introQuestions[introStep]}
           currentStep={introStep + 1}
-          totalSteps={introQuestions.length}
+          totalSteps={introQuestions.length + quizQuestions.length}
           onAnswer={handleIntroAnswer}
         />
       )}
@@ -136,8 +136,8 @@ const Index = () => {
         <QuizQuestionCard
           key={currentQuestion}
           question={quizQuestions[currentQuestion]}
-          currentQuestion={currentQuestion + 1}
-          totalQuestions={quizQuestions.length}
+          currentQuestion={introQuestions.length + currentQuestion + 1}
+          totalQuestions={introQuestions.length + quizQuestions.length}
           onAnswer={handleAnswer}
         />
       )}

@@ -33,9 +33,6 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
           <p className="text-foreground/90 leading-relaxed mb-4">
             <span className="text-gold font-semibold">Você sente um chamado espiritual?</span> Um desejo profundo de se conectar mais intimamente com Deus e descobrir seu verdadeiro propósito?
           </p>
-          <p className="text-foreground/80 leading-relaxed mb-4">
-            Os três grandes Arcanjos — <span className="text-gold">São Miguel</span>, <span className="text-gold">São Gabriel</span> e <span className="text-gold">São Rafael</span> — são poderosos intercessores que Deus nos deu para nos guiar, proteger e curar.
-          </p>
           <p className="text-foreground/90 leading-relaxed font-medium">
             Responda este quiz e descubra como fortalecer sua jornada espiritual com a intercessão da Trindade dos Arcanjos.
           </p>
