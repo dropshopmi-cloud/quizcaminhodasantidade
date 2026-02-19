@@ -1,7 +1,9 @@
 import ArchangelCarousel from './ArchangelCarousel';
 import ProductChecklist from './ProductChecklist';
 import FAQ from './FAQ';
-import garantia90 from '@/assets/garantia-90-dias.png';
+import TestimonialsCarousel from './TestimonialsCarousel';
+import garantia7 from '@/assets/garantia-7-dias.png';
+import saasImage from '@/assets/saas-mockup.png';
 import { Check } from 'lucide-react';
 
 const CHECKOUT_URL = 'https://pay.hotmart.com/G104041523C?checkoutMode=10';
@@ -73,8 +75,28 @@ const ResultScreen = () => {
         </div>
 
         {/* Carousel */}
-        <div className="mb-8">
+        <div className="mb-6">
           <ArchangelCarousel />
+        </div>
+
+        {/* ====== Mockup do Produto (abaixo do carrossel) ====== */}
+        <div className="sacred-card mb-8 text-center">
+          <h2 className="font-cinzel text-xl md:text-2xl text-gold text-shadow-gold mb-2">
+            Transforme Sua Vida Espiritual
+          </h2>
+          <p className="font-lora text-foreground/80 leading-relaxed mb-4">
+            A <span className="text-gold font-semibold">Trindade dos Arcanjos</span> é um guia devocional completo —{' '}
+            <strong>Orações, Meditações, Novenas e Reflexões Diárias</strong>{' '}
+            para crescer na fé e fortalecer sua comunhão com Deus.
+          </p>
+          <img
+            src={saasImage}
+            alt="Trindade dos Arcanjos - disponível em todos os dispositivos"
+            className="w-full max-w-xs mx-auto object-contain mb-4"
+          />
+          <p className="text-foreground/50 text-sm line-through mb-1">DE R$97,00</p>
+          <p className="text-foreground/70 font-cinzel text-sm uppercase tracking-wide mb-1">POR APENAS</p>
+          <p className="text-cta-green font-cinzel text-3xl font-bold">R$47,00</p>
         </div>
 
         {/* ====== SEÇÃO 1 — O que você vai encontrar ====== */}
@@ -105,7 +127,7 @@ const ResultScreen = () => {
         {/* ====== SEÇÃO 2 — Benefícios ====== */}
         <div className="sacred-card mb-8">
           <h3 className="font-cinzel text-lg text-gold text-center mb-6 text-shadow-gold">
-            O que este Devocional vai transformar em você:
+            O que a Trindade dos Arcanjos vai despertar em você:
           </h3>
           <div className="space-y-5">
             {benefits.map((benefit, i) => (
@@ -138,6 +160,9 @@ const ResultScreen = () => {
           </div>
         </div>
 
+        {/* ====== DEPOIMENTOS (antes da Garantia) ====== */}
+        <TestimonialsCarousel onCheckout={handleCheckout} />
+
         {/* ====== SEÇÃO 3 — Garantia ====== */}
         <div className="sacred-card mb-8 text-center">
           <h3 className="font-cinzel text-xl text-gold mb-3 text-shadow-gold">
@@ -145,19 +170,19 @@ const ResultScreen = () => {
           </h3>
           <p className="text-foreground/80 font-lora leading-relaxed mb-6">
             <strong>SIM!</strong> Estamos tão confiantes que a Trindade dos Arcanjos te ajudará que garantimos um{' '}
-            <strong className="text-gold">reembolso total no prazo de 90 dias</strong> após a compra.
+            <strong className="text-gold">reembolso total no prazo de 7 dias</strong> após a compra.
           </p>
           <img
-            src={garantia90}
-            alt="Garantia 90 dias"
+            src={garantia7}
+            alt="Garantia 7 dias"
             className="w-40 h-40 mx-auto object-contain mb-4"
           />
         </div>
 
-        {/* ====== Bloco dos Arcanjos (após Garantia) ====== */}
+        {/* ====== Bloco dos Arcanjos + Nossa Senhora (após Garantia) ====== */}
         <div className="sacred-card mb-8 text-center">
           <p className="text-foreground/90 leading-relaxed mb-4 font-lora">
-            Os Arcanjos <span className="text-gold font-semibold">Miguel, Gabriel e Rafael</span> são mensageiros celestiais que Deus designou para nos guiar em nossa jornada espiritual.
+            Os Arcanjos <span className="text-gold font-semibold">Miguel, Gabriel e Rafael</span> são mensageiros celestiais que Deus designou para nos guiar em nossa jornada espiritual. Juntos aos Arcanjos, <span className="text-gold font-semibold">Nossa Senhora</span> intercede por nós com todo o seu amor materno, cobrindo-nos com seu manto de proteção e graça.
           </p>
           <p className="text-foreground/80 leading-relaxed mb-4 font-lora">
             Sua busca por um propósito mais profundo com Deus mostra que você está pronto para uma <span className="text-gold">transformação espiritual verdadeira</span>.

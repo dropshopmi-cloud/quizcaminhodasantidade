@@ -7,8 +7,8 @@ export interface IntroQuestion {
 
 interface IntroQuestionScreenProps {
   question: IntroQuestion;
-  currentStep: number;
-  totalSteps: number;
+  currentStep: number;   // global step (e.g. 1, 2, 3 for intro questions)
+  totalSteps: number;    // total of all questions combined (intro + main)
   onAnswer: (answer: string) => void;
 }
 
@@ -27,19 +27,21 @@ const IntroQuestionScreen = ({ question, currentStep, totalSteps, onAnswer }: In
     }, 600);
   };
 
+  const percentage = Math.round((currentStep / totalSteps) * 100);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8 animate-fade-in-up">
       <div className="max-w-lg w-full">
-        {/* Progress */}
+        {/* Unified Progress Bar */}
         <div className="w-full mb-8">
           <div className="flex justify-between text-sm text-foreground/70 mb-2">
-            <span>Etapa {currentStep} de {totalSteps}</span>
-            <span className="text-gold">{Math.round((currentStep / totalSteps) * 100)}%</span>
+            <span>Pergunta {currentStep} de {totalSteps}</span>
+            <span className="text-gold">{percentage}%</span>
           </div>
           <div className="progress-bar">
             <div
               className="progress-bar-fill"
-              style={{ width: `${(currentStep / totalSteps) * 100}%` }}
+              style={{ width: `${percentage}%` }}
             />
           </div>
         </div>
