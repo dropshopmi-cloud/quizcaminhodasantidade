@@ -96,7 +96,7 @@ const ResultScreen = () => {
           />
           <p className="text-foreground/50 text-sm line-through mb-1">DE R$97,00</p>
           <p className="text-foreground/70 font-cinzel text-sm uppercase tracking-wide mb-1">POR APENAS</p>
-          <p className="text-cta-green font-cinzel text-3xl font-bold">R$47,00</p>
+          <p className="text-gold font-cinzel text-4xl font-bold text-shadow-gold">R$47,00</p>
         </div>
 
         {/* ====== SEÇÃO 1 — O que você vai encontrar ====== */}
