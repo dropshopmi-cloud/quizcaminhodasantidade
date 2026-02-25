@@ -11,11 +11,16 @@ import LoadingScreen from '@/components/LoadingScreen';
 import ResultScreen from '@/components/ResultScreen';
 import AudioControl from '@/components/AudioControl';
 
+import introDiscernimento from '@/assets/intro-discernimento.png';
+import introPedidos from '@/assets/intro-pedidos.png';
+import introRenovacao from '@/assets/intro-renovacao.png';
+
 type QuizState = 'welcome' | 'name-capture' | 'name-greeting' | 'intro-quiz' | 'quiz' | 'prayer' | 'loading' | 'result';
 
 const introQuestions: IntroQuestion[] = [
   {
     question: "Em quais áreas você deseja colocar seu coração neste Devocional?",
+    image: introDiscernimento,
     options: [
       "💰 Minha vida financeira e profissional",
       "❤️ Harmonia nos relacionamentos familiares",
@@ -26,6 +31,7 @@ const introQuestions: IntroQuestion[] = [
   },
   {
     question: "Como está o seu coração espiritual neste momento?",
+    image: introPedidos,
     options: [
       "❤️🔥 Sinto que preciso de uma purificação interior",
       "🌿 Busco uma renovação espiritual",
@@ -36,6 +42,7 @@ const introQuestions: IntroQuestion[] = [
   },
   {
     question: "Você sente que há algo em sua vida que, apesar de seus esforços, ainda não se resolve?",
+    image: introRenovacao,
     options: [
       "😔 Sim… Sinto que tudo está travado, e nada parece dar certo.",
       "😕 Sim… Algumas áreas da minha vida parecem estagnadas.",
@@ -53,25 +60,21 @@ const Index = () => {
 
   const { isMuted, hasEnded, play, toggleMute } = useAudio('/audio/oracao-quiz.mp4');
 
-  // Welcome → Name Capture
   const handleStart = useCallback(() => {
     setQuizState('name-capture');
   }, []);
 
-  // Name Capture → Name Greeting
   const handleNameSubmit = useCallback((name: string) => {
     setUserName(name);
     setQuizState('name-greeting');
   }, []);
 
-  // Name Greeting → Intro Questions
   const handleGreetingContinue = useCallback(() => {
     setIntroStep(0);
     setQuizState('intro-quiz');
     play();
   }, [play]);
 
-  // Intro Questions → main quiz
   const handleIntroAnswer = useCallback((answer: string) => {
     setAnswers((prev) => [...prev, answer]);
     if (introStep < introQuestions.length - 1) {
@@ -82,7 +85,6 @@ const Index = () => {
     }
   }, [introStep]);
 
-  // Main quiz answers
   const handleAnswer = useCallback((answer: string) => {
     setAnswers((prev) => [...prev, answer]);
     if (currentQuestion < quizQuestions.length - 1) {
@@ -92,12 +94,10 @@ const Index = () => {
     }
   }, [currentQuestion]);
 
-  // Prayer → Loading
   const handlePrayerContinue = useCallback(() => {
     setQuizState('loading');
   }, []);
 
-  // Loading → Result
   const handleLoadingComplete = useCallback(() => {
     setQuizState('result');
   }, []);
@@ -110,17 +110,9 @@ const Index = () => {
         <AudioControl isMuted={isMuted} onToggle={toggleMute} />
       )}
 
-      {quizState === 'welcome' && (
-        <WelcomeScreen onStart={handleStart} />
-      )}
-
-      {quizState === 'name-capture' && (
-        <NameCaptureScreen onSubmit={handleNameSubmit} />
-      )}
-
-      {quizState === 'name-greeting' && (
-        <NameGreetingScreen name={userName} onContinue={handleGreetingContinue} />
-      )}
+      {quizState === 'welcome' && <WelcomeScreen onStart={handleStart} />}
+      {quizState === 'name-capture' && <NameCaptureScreen onSubmit={handleNameSubmit} />}
+      {quizState === 'name-greeting' && <NameGreetingScreen name={userName} onContinue={handleGreetingContinue} />}
 
       {quizState === 'intro-quiz' && (
         <IntroQuestionScreen
@@ -142,17 +134,9 @@ const Index = () => {
         />
       )}
 
-      {quizState === 'prayer' && (
-        <PrayerScreen name={userName} onContinue={handlePrayerContinue} />
-      )}
-
-      {quizState === 'loading' && (
-        <LoadingScreen onComplete={handleLoadingComplete} />
-      )}
-
-      {quizState === 'result' && (
-        <ResultScreen />
-      )}
+      {quizState === 'prayer' && <PrayerScreen name={userName} onContinue={handlePrayerContinue} />}
+      {quizState === 'loading' && <LoadingScreen onComplete={handleLoadingComplete} />}
+      {quizState === 'result' && <ResultScreen userName={userName} />}
     </div>
   );
 };

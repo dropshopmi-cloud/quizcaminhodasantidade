@@ -3,12 +3,13 @@ import { useState } from 'react';
 export interface IntroQuestion {
   question: string;
   options: string[];
+  image?: string;
 }
 
 interface IntroQuestionScreenProps {
   question: IntroQuestion;
-  currentStep: number;   // global step (e.g. 1, 2, 3 for intro questions)
-  totalSteps: number;    // total of all questions combined (intro + main)
+  currentStep: number;
+  totalSteps: number;
   onAnswer: (answer: string) => void;
 }
 
@@ -45,6 +46,17 @@ const IntroQuestionScreen = ({ question, currentStep, totalSteps, onAnswer }: In
             />
           </div>
         </div>
+
+        {/* Question Image */}
+        {question.image && (
+          <div className="relative mb-6 rounded-lg overflow-hidden">
+            <img
+              src={question.image}
+              alt="Pergunta"
+              className="w-full aspect-square object-cover rounded-lg"
+            />
+          </div>
+        )}
 
         {/* Question */}
         <h2 className="font-cinzel text-xl md:text-2xl text-center text-foreground mb-8 leading-relaxed">

@@ -95,13 +95,14 @@ export const productFeatures = [
   { title: "Meditação", icon: "🕯️" },
   { title: "Leituras", icon: "📖" },
   { title: "Devocional", icon: "⛪" },
+  { title: "Central Mariana", icon: "🌹" },
   { title: "E mais…", icon: "✨" }
 ];
 
 export const faqItems = [
   {
-    question: "O que é a Trindade dos Arcanjos?",
-    answer: "A Trindade dos Arcanjos é um guia devocional completo com mais de 110 orações, leituras, novenas, meditações, devocional, rosário e muito mais, dedicadas aos três grandes Arcanjos: São Miguel, São Gabriel e São Rafael. Um material único para fortalecer seu vínculo com Deus, sua fé e proteção espiritual."
+    question: "O que é o Caminho da Santidade?",
+    answer: "O Caminho da Santidade é um guia devocional completo com mais de 110 orações, leituras, novenas, meditações, devocional, rosário, Central Mariana e muito mais. Um material único para fortalecer seu vínculo com Deus, sua fé e proteção espiritual."
   },
   {
     question: "Como vou receber o material?",
