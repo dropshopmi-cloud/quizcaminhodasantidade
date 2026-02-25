@@ -37,15 +37,13 @@ const TestimonialsCarousel = ({ onCheckout }: TestimonialsCarouselProps) => {
 
   return (
     <div className="sacred-card mb-8">
-      {/* Header */}
       <h3 className="font-cinzel text-xl text-gold text-center mb-2 text-shadow-gold">
-        Trindade dos Arcanjos é confiável?
+        Caminho da Santidade é confiável?
       </h3>
       <p className="text-center text-foreground/80 font-lora mb-6 leading-relaxed">
         <strong className="text-gold">SIM!</strong> 100% aqui estão algumas avaliações das pessoas que já adquiriram! 👇
       </p>
 
-      {/* Carousel */}
       <div className="relative">
         <div className="overflow-hidden rounded-xl">
           <div className="relative">
@@ -66,7 +64,6 @@ const TestimonialsCarousel = ({ onCheckout }: TestimonialsCarouselProps) => {
           </div>
         </div>
 
-        {/* Arrows */}
         <button
           onClick={prev}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 w-8 h-8 rounded-full bg-secondary/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold/20 transition-colors"
@@ -81,7 +78,6 @@ const TestimonialsCarousel = ({ onCheckout }: TestimonialsCarouselProps) => {
         </button>
       </div>
 
-      {/* Dots */}
       <div className="flex justify-center gap-1.5 mt-4 mb-6">
         {testimonials.map((_, index) => (
           <button
@@ -94,12 +90,11 @@ const TestimonialsCarousel = ({ onCheckout }: TestimonialsCarouselProps) => {
         ))}
       </div>
 
-      {/* CTA Button */}
       <button
         onClick={onCheckout}
         className="btn-cta animate-pulse-glow font-cinzel text-lg w-full"
       >
-        Quero Meu Propósito com Deus
+        Quero Iniciar Meu Caminho com Deus
       </button>
       <div className="mt-3 text-center">
         <p className="text-foreground/50 text-sm line-through">De R$97</p>
