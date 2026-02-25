@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import trindadeArcanjos from '@/assets/trindade-arcanjos.png';
+import caminhoDaSantidade from '@/assets/caminho-da-santidade.png';
 
 interface NameCaptureScreenProps {
   onSubmit: (name: string) => void;
@@ -21,8 +21,8 @@ const NameCaptureScreen = ({ onSubmit }: NameCaptureScreenProps) => {
         <div className="relative mb-8">
           <div className="absolute inset-0 bg-gold/20 rounded-full blur-3xl animate-pulse" />
           <img
-            src={trindadeArcanjos}
-            alt="Trindade dos Arcanjos"
+            src={caminhoDaSantidade}
+            alt="Caminho da Santidade"
             className="relative w-40 h-40 mx-auto rounded-full object-cover border-2 border-gold/40 shadow-2xl"
           />
         </div>
