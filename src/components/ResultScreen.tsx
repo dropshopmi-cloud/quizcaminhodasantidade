@@ -109,7 +109,7 @@ const ResultScreen = ({ userName }: ResultScreenProps) => {
             Transforme Sua Vida Espiritual
           </h2>
           <p className="font-lora text-foreground/80 leading-relaxed mb-4">
-            O <span className="text-gold font-semibold">Caminho da Santidade</span> é um guia devocional completo —{' '}
+            O <span className="text-gold font-semibold">Caminho da Santidade</span> é um guia devocional completo com{' '}
             <strong>Orações, Meditações, Novenas e Reflexões Diárias</strong>{' '}
             para crescer na fé e fortalecer sua comunhão com Deus.
           </p>
@@ -199,7 +199,7 @@ const ResultScreen = ({ userName }: ResultScreenProps) => {
           <img
             src={garantia7}
             alt="Garantia 7 dias"
-            className="w-40 h-40 mx-auto object-contain mb-4"
+            className="w-56 h-56 mx-auto object-contain mb-4"
           />
         </div>
 
