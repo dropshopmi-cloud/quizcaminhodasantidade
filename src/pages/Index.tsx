@@ -14,6 +14,7 @@ import AudioControl from '@/components/AudioControl';
 import introDiscernimento from '@/assets/intro-discernimento.png';
 import introPedidos from '@/assets/intro-pedidos.png';
 import introRenovacao from '@/assets/intro-renovacao.png';
+import { useEffect } from 'react';
 
 type QuizState = 'welcome' | 'name-capture' | 'name-greeting' | 'intro-quiz' | 'quiz' | 'prayer' | 'loading' | 'result';
 
@@ -51,6 +52,11 @@ const introQuestions: IntroQuestion[] = [
   }
 ];
 
+const allImages = [
+  introDiscernimento, introPedidos, introRenovacao,
+  ...quizQuestions.map(q => q.image)
+];
+
 const Index = () => {
   const [quizState, setQuizState] = useState<QuizState>('welcome');
   const [userName, setUserName] = useState('');
@@ -59,6 +65,14 @@ const Index = () => {
   const [answers, setAnswers] = useState<string[]>([]);
 
   const { isMuted, hasEnded, play, toggleMute } = useAudio('/audio/oracao-quiz.mp4');
+
+  // Preload all quiz images
+  useEffect(() => {
+    allImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   const handleStart = useCallback(() => {
     setQuizState('name-capture');
