@@ -9,6 +9,7 @@ export const useAudio = (audioSrc: string) => {
   useEffect(() => {
     audioRef.current = new Audio(audioSrc);
     audioRef.current.loop = false;
+    audioRef.current.playbackRate = 0.85;
     
     const handleEnded = () => {
       setHasEnded(true);
