@@ -22,31 +22,31 @@ const introQuestions: IntroQuestion[] = [
     question: "Em quais áreas você deseja colocar seu coração neste Devocional?",
     image: introDiscernimento,
     options: [
-      "💰 Minha vida financeira e profissional",
-      "❤️ Harmonia nos relacionamentos familiares",
-      "🛡️ Proteção e força espiritual",
-      "🙏 Minha caminhada de fé",
-      "💬 Outra intenção"
+      "Minha vida financeira e profissional",
+      "Harmonia nos relacionamentos familiares",
+      "Proteção e força espiritual",
+      "Minha caminhada de fé",
+      "Outra intenção"
     ]
   },
   {
     question: "Como está o seu coração espiritual neste momento?",
     image: introPedidos,
     options: [
-      "❤️🔥 Sinto que preciso de uma purificação interior",
-      "🌿 Busco uma renovação espiritual",
-      "🕊️ Estou em paz, mas desejo mais clareza e direção",
-      "🛡️ Sinto necessidade de proteção e paz espiritual",
-      "🙏 Quero fortalecer minha fé e minha comunhão com Deus"
+      "Sinto que preciso de uma purificação interior",
+      "Busco uma renovação espiritual",
+      "Estou em paz, mas desejo mais clareza e direção",
+      "Sinto necessidade de proteção e paz espiritual",
+      "Quero fortalecer minha fé e minha comunhão com Deus"
     ]
   },
   {
     question: "Você sente que há algo em sua vida que, apesar de seus esforços, ainda não se resolve?",
     image: introRenovacao,
     options: [
-      "😔 Sim… Sinto que tudo está travado, e nada parece dar certo.",
-      "😕 Sim… Algumas áreas da minha vida parecem estagnadas.",
-      "😊 Graças a Deus, sinto que tudo está fluindo bem no momento."
+      "Sim… Sinto que tudo está travado, e nada parece dar certo.",
+      "Sim… Algumas áreas da minha vida parecem estagnadas.",
+      "Graças a Deus, sinto que tudo está fluindo bem no momento."
     ]
   }
 ];
