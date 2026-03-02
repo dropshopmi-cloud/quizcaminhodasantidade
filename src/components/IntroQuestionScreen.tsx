@@ -31,8 +31,8 @@ const IntroQuestionScreen = ({ question, currentStep, totalSteps, onAnswer }: In
   const percentage = Math.round((currentStep / totalSteps) * 100);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8 animate-fade-in-up">
-      <div className="max-w-lg w-full">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8">
+      <div className="max-w-lg w-full animate-fade-in-up">
         {/* Unified Progress Bar */}
         <div className="w-full mb-8">
           <div className="flex justify-between text-sm text-foreground/70 mb-2">
@@ -47,21 +47,23 @@ const IntroQuestionScreen = ({ question, currentStep, totalSteps, onAnswer }: In
           </div>
         </div>
 
-        {/* Question Image */}
-        {question.image && (
-          <div className="relative mb-6 rounded-lg overflow-hidden">
-            <img
-              src={question.image}
-              alt="Pergunta"
-              className="w-full aspect-square object-cover rounded-lg"
-            />
-          </div>
-        )}
+        {/* Question Card */}
+        <div className="sacred-card">
+          {/* Question Image */}
+          {question.image && (
+            <div className="relative mb-6 rounded-lg overflow-hidden">
+              <img
+                src={question.image}
+                alt="Pergunta"
+                className="w-full aspect-square object-cover rounded-lg"
+              />
+            </div>
+          )}
 
-        {/* Question */}
-        <h2 className="font-cinzel text-xl md:text-2xl text-center text-foreground mb-8 leading-relaxed">
-          {question.question}
-        </h2>
+          {/* Question */}
+          <h2 className="text-xl md:text-2xl font-cinzel text-center text-foreground mb-6 leading-relaxed">
+            {question.question}
+          </h2>
 
         {/* Options */}
         <div className="space-y-3">
@@ -74,9 +76,15 @@ const IntroQuestionScreen = ({ question, currentStep, totalSteps, onAnswer }: In
                 selected === option ? 'selected' : ''
               } ${transitioning && selected !== option ? 'opacity-50' : ''}`}
             >
-              <span className="text-foreground/90">{option}</span>
+              <span className="flex items-center gap-3">
+                <span className="w-8 h-8 rounded-full bg-gold/20 border border-gold/50 flex items-center justify-center text-gold font-cinzel text-sm shrink-0">
+                  {String.fromCharCode(65 + index)}
+                </span>
+                <span className="text-foreground/90">{option}</span>
+              </span>
             </button>
           ))}
+        </div>
         </div>
       </div>
     </div>
