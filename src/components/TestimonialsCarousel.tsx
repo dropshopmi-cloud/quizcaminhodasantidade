@@ -1,21 +1,42 @@
 import { useState, useEffect } from 'react';
-import comentario1 from '@/assets/comentario-1.jpeg';
-import comentario2 from '@/assets/comentario-2.jpeg';
-import comentario3 from '@/assets/comentario-3.jpeg';
-import comentario4 from '@/assets/comentario-4.jpeg';
-import comentario5 from '@/assets/comentario-5.png';
-import comentario6 from '@/assets/comentario-6.png';
-import comentario7 from '@/assets/comentario-7.png';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
-  { src: comentario1, alt: 'Depoimento 1' },
-  { src: comentario2, alt: 'Depoimento 2' },
-  { src: comentario3, alt: 'Depoimento 3' },
-  { src: comentario4, alt: 'Depoimento 4' },
-  { src: comentario5, alt: 'Depoimento 5' },
-  { src: comentario6, alt: 'Depoimento 6' },
-  { src: comentario7, alt: 'Depoimento 7' },
+  {
+    text: "Comecei a rezar todos os dias e senti uma paz enorme no meu coração. O Caminho da Santidade me ajudou a voltar para Deus.",
+    author: "Maria",
+    location: "SP"
+  },
+  {
+    text: "Garantir o Caminho da Santidade mudou minha rotina espiritual. Hoje consigo rezar todos os dias com muito mais disciplina.",
+    author: "João",
+    location: "MG"
+  },
+  {
+    text: "Eu sempre começava novenas e não terminava. Com o Caminho da Santidade tudo ficou organizado e fácil de acompanhar.",
+    author: "Carla",
+    location: "PR"
+  },
+  {
+    text: "Sinto que minha fé ficou muito mais forte depois que comecei a usar o Caminho da Santidade no meu celular.",
+    author: "Antônio",
+    location: "BA"
+  },
+  {
+    text: "Agora tenho minhas orações, novenas e devocionais sempre comigo. Isso transformou completamente minha vida espiritual.",
+    author: "Juliana",
+    location: "RJ"
+  },
+  {
+    text: "É incrível ter tudo organizado em um só lugar. O Caminho da Santidade realmente me ajudou a criar constância na oração.",
+    author: "Marcos",
+    location: "RS"
+  },
+  {
+    text: "Depois que comecei a usar o Caminho da Santidade sinto mais paz e confiança em Deus todos os dias.",
+    author: "Patrícia",
+    location: "GO"
+  }
 ];
 
 interface TestimonialsCarouselProps {
@@ -46,19 +67,27 @@ const TestimonialsCarousel = ({ onCheckout }: TestimonialsCarouselProps) => {
 
       <div className="relative">
         <div className="overflow-hidden rounded-xl">
-          <div className="relative">
+          <div className="relative min-h-[200px] flex items-center">
             {testimonials.map((t, index) => (
               <div
                 key={index}
-                className={`transition-all duration-700 ${
-                  index === currentIndex ? 'block' : 'hidden'
+                className={`transition-all duration-700 w-full absolute inset-0 flex items-center justify-center p-6 bg-secondary/30 rounded-xl border border-gold/20 ${
+                  index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
               >
-                <img
-                  src={t.src}
-                  alt={t.alt}
-                  className="w-full max-h-96 object-contain rounded-xl mx-auto"
-                />
+                <div className="text-center">
+                  <div className="flex justify-center gap-1 mb-4">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} size={20} className="fill-gold text-gold" />
+                    ))}
+                  </div>
+                  <p className="text-lg md:text-xl font-lora italic text-foreground mb-4">
+                    "{t.text}"
+                  </p>
+                  <p className="font-cinzel text-gold font-semibold">
+                    — {t.author}, {t.location}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

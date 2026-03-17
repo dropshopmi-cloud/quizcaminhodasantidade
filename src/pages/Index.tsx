@@ -1,6 +1,5 @@
 import { useState, useCallback } from 'react';
 import { quizQuestions } from '@/data/quizData';
-import { useAudio } from '@/hooks/useAudio';
 import WelcomeScreen from '@/components/WelcomeScreen';
 import NameCaptureScreen from '@/components/NameCaptureScreen';
 import NameGreetingScreen from '@/components/NameGreetingScreen';
@@ -9,19 +8,12 @@ import QuizQuestionCard from '@/components/QuizQuestionCard';
 import PrayerScreen from '@/components/PrayerScreen';
 import LoadingScreen from '@/components/LoadingScreen';
 import ResultScreen from '@/components/ResultScreen';
-import AudioControl from '@/components/AudioControl';
-
-import introDiscernimento from '@/assets/intro-discernimento.png';
-import introPedidos from '@/assets/intro-pedidos.png';
-import introRenovacao from '@/assets/intro-renovacao.png';
-import { useEffect } from 'react';
 
 type QuizState = 'welcome' | 'name-capture' | 'name-greeting' | 'intro-quiz' | 'quiz' | 'prayer' | 'loading' | 'result';
 
 const introQuestions: IntroQuestion[] = [
   {
     question: "Em quais áreas você deseja colocar seu coração neste Devocional?",
-    image: introDiscernimento,
     options: [
       "Minha vida financeira e profissional",
       "Harmonia nos relacionamentos familiares",
@@ -32,7 +24,6 @@ const introQuestions: IntroQuestion[] = [
   },
   {
     question: "Como está o seu coração espiritual neste momento?",
-    image: introPedidos,
     options: [
       "Sinto que preciso de uma purificação interior",
       "Busco uma renovação espiritual",
@@ -43,7 +34,6 @@ const introQuestions: IntroQuestion[] = [
   },
   {
     question: "Você sente que há algo em sua vida que, apesar de seus esforços, ainda não se resolve?",
-    image: introRenovacao,
     options: [
       "Sim… Sinto que tudo está travado, e nada parece dar certo.",
       "Sim… Algumas áreas da minha vida parecem estagnadas.",
@@ -52,27 +42,12 @@ const introQuestions: IntroQuestion[] = [
   }
 ];
 
-const allImages = [
-  introDiscernimento, introPedidos, introRenovacao,
-  ...quizQuestions.map(q => q.image)
-];
-
 const Index = () => {
   const [quizState, setQuizState] = useState<QuizState>('welcome');
   const [userName, setUserName] = useState('');
   const [introStep, setIntroStep] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
-
-  const { isMuted, hasEnded, play, toggleMute } = useAudio('/audio/oracao-quiz.mp4');
-
-  // Preload all quiz images
-  useEffect(() => {
-    allImages.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
 
   const handleStart = useCallback(() => {
     setQuizState('name-capture');
@@ -86,8 +61,7 @@ const Index = () => {
   const handleGreetingContinue = useCallback(() => {
     setIntroStep(0);
     setQuizState('intro-quiz');
-    play();
-  }, [play]);
+  }, []);
 
   const handleIntroAnswer = useCallback((answer: string) => {
     setAnswers((prev) => [...prev, answer]);
@@ -116,13 +90,8 @@ const Index = () => {
     setQuizState('result');
   }, []);
 
-  const showAudio = (quizState === 'intro-quiz' || quizState === 'quiz' || quizState === 'prayer') && !hasEnded;
-
   return (
     <div className="min-h-screen">
-      {showAudio && (
-        <AudioControl isMuted={isMuted} onToggle={toggleMute} />
-      )}
 
       {quizState === 'welcome' && <WelcomeScreen onStart={handleStart} />}
       {quizState === 'name-capture' && <NameCaptureScreen onSubmit={handleNameSubmit} />}

@@ -1,16 +1,8 @@
-import quizOracoes from '@/assets/quiz-oracoes.png';
-import quizNovenas from '@/assets/quiz-novenas.png';
-import quizRosario from '@/assets/quiz-rosario.png';
-import quizMeditacao from '@/assets/quiz-meditacao.png';
-import quizLeituras from '@/assets/quiz-leituras.png';
-import quizDevocional from '@/assets/quiz-devocional.png';
-
 export interface QuizQuestion {
   id: number;
   theme: string;
   question: string;
   options: string[];
-  image: string;
 }
 
 export const quizQuestions: QuizQuestion[] = [
@@ -23,8 +15,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Oro algumas vezes por semana",
       "Tenho dificuldade em manter uma rotina de oração",
       "Gostaria de aprofundar minha vida de oração"
-    ],
-    image: quizOracoes
+    ]
   },
   {
     id: 2,
@@ -35,8 +26,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Já fiz algumas novenas, mas não com frequência",
       "Nunca fiz uma novena completa",
       "Quero aprender a fazer novenas poderosas"
-    ],
-    image: quizNovenas
+    ]
   },
   {
     id: 3,
@@ -47,8 +37,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Rezo ocasionalmente",
       "Tenho vontade de começar a rezar",
       "Quero aprofundar essa devoção"
-    ],
-    image: quizRosario
+    ]
   },
   {
     id: 4,
@@ -59,8 +48,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Às vezes faço momentos de silêncio com Deus",
       "Não conheço bem essas práticas",
       "Desejo aprender a meditar espiritualmente"
-    ],
-    image: quizMeditacao
+    ]
   },
   {
     id: 5,
@@ -71,8 +59,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Leio de vez em quando",
       "Tenho dificuldade em manter o hábito",
       "Quero desenvolver esse hábito"
-    ],
-    image: quizLeituras
+    ]
   },
   {
     id: 6,
@@ -83,8 +70,7 @@ export const quizQuestions: QuizQuestion[] = [
       "Com orações e novenas poderosas",
       "Através da intercessão dos Arcanjos",
       "Todas as anteriores"
-    ],
-    image: quizDevocional
+    ]
   }
 ];
 

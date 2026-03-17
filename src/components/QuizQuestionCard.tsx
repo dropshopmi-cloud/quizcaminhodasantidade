@@ -45,14 +45,7 @@ const QuizQuestionCard = ({
 
         {/* Question Card */}
         <div className="sacred-card">
-          {/* Question Image */}
-          <div className="relative mb-6 rounded-lg overflow-hidden">
-            <img 
-              src={question.image} 
-              alt={question.theme}
-              className="w-full aspect-square object-cover rounded-lg"
-            />
-          </div>
+          {/* Question Image (Removed) */}
 
           {/* Question */}
           <h2 className="text-xl md:text-2xl font-cinzel text-center text-foreground mb-6 leading-relaxed">
