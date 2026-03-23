@@ -61,6 +61,9 @@ interface ResultScreenProps {
 
 const ResultScreen = ({ userName }: ResultScreenProps) => {
   const handleCheckout = () => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout');
+    }
     window.location.href = CHECKOUT_URL;
   };
 
