@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import ProductChecklist from './ProductChecklist';
 import FAQ from './FAQ';
 import TestimonialsCarousel from './TestimonialsCarousel';
