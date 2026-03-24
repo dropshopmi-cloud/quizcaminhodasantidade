@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import ProductChecklist from './ProductChecklist';
 import FAQ from './FAQ';
 import TestimonialsCarousel from './TestimonialsCarousel';
@@ -60,6 +61,11 @@ interface ResultScreenProps {
 }
 
 const ResultScreen = ({ userName }: ResultScreenProps) => {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead');
+    }
+  }, []);
   const handleCheckout = () => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'InitiateCheckout');
