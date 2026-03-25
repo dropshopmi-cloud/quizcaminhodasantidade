@@ -195,7 +195,7 @@ const ResultScreen = ({ userName }: ResultScreenProps) => {
         <CtaBlock onCheckout={handleCheckout} />
 
         {/* Depoimentos */}
-        <TestimonialsCarousel onCheckout={handleCheckout} />
+        <TestimonialsCarousel />
 
         {/* CTA 3 — após depoimentos */}
         <CtaBlock onCheckout={handleCheckout} />
