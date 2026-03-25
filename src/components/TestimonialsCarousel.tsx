@@ -39,11 +39,7 @@ const testimonials = [
   }
 ];
 
-interface TestimonialsCarouselProps {
-  onCheckout: () => void;
-}
-
-const TestimonialsCarousel = ({ onCheckout }: TestimonialsCarouselProps) => {
+const TestimonialsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -119,16 +115,6 @@ const TestimonialsCarousel = ({ onCheckout }: TestimonialsCarouselProps) => {
         ))}
       </div>
 
-      <button
-        onClick={onCheckout}
-        className="btn-cta animate-pulse-glow font-cinzel text-lg w-full"
-      >
-        Quero Iniciar Meu Caminho com Deus
-      </button>
-      <div className="mt-3 text-center">
-        <p className="text-foreground/50 text-sm line-through">De R$97</p>
-        <p className="text-gold font-cinzel text-xl font-bold">por apenas R$47,00</p>
-      </div>
     </div>
   );
 };
