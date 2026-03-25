@@ -60,12 +60,31 @@ interface ResultScreenProps {
   userName?: string;
 }
 
+const CtaBlock = ({ onCheckout }: { onCheckout: () => void }) => (
+  <div className="text-center mb-10">
+    <button
+      onClick={onCheckout}
+      className="btn-cta animate-pulse-glow font-cinzel text-lg md:text-xl w-full max-w-md"
+    >
+      Quero Iniciar Meu Caminho com Deus
+    </button>
+    <div className="mt-3">
+      <p className="text-foreground/50 text-sm line-through">De R$97</p>
+      <p className="text-gold font-cinzel text-xl font-bold">por apenas R$47,00</p>
+    </div>
+    <p className="text-foreground/50 text-sm mt-2">
+      🔒 Compra segura • Acesso imediato • Garantia de 7 dias
+    </p>
+  </div>
+);
+
 const ResultScreen = ({ userName }: ResultScreenProps) => {
   useEffect(() => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'Lead');
     }
   }, []);
+
   const handleCheckout = () => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'InitiateCheckout');
@@ -92,25 +111,18 @@ const ResultScreen = ({ userName }: ResultScreenProps) => {
         {/* Diagnóstico personalizado */}
         <div className="sacred-card mb-8">
           <p className="text-foreground/90 font-lora leading-relaxed mb-4">
-            <span className="text-gold font-semibold">{displayName}</span>, suas respostas mostram que você está em um momento de busca por direção e fortalecimento espiritual.
+            <span className="text-gold font-semibold">{displayName}</span>, suas respostas mostram que você deseja fortalecer sua fé, ter mais constância na oração e se aproximar mais de Deus.
           </p>
           <p className="text-foreground/80 font-lora leading-relaxed mb-4">
-            Você deseja crescer na fé, mas precisa de constância, organização e um caminho estruturado para avançar.
+            O <span className="text-gold font-semibold">Caminho da Santidade</span> foi criado exatamente para pessoas que querem organizar sua vida espiritual, rezar com mais frequência e sentir mais paz no dia a dia.
           </p>
-          <p className="text-foreground/90 font-lora leading-relaxed mb-3 font-medium">
-            Neste momento, o que você mais precisa é:
-          </p>
-          <ul className="space-y-2 mb-4">
-            {["Clareza", "Disciplina espiritual", "Rotina de oração", "Crescimento interior"].map((item, i) => (
-              <li key={i} className="flex items-center gap-2 text-foreground/80 font-lora">
-                <span className="text-cta-green">•</span> {item}
-              </li>
-            ))}
-          </ul>
-          <p className="text-foreground/90 font-lora leading-relaxed font-medium">
-            É exatamente isso que o <span className="text-gold font-semibold">Caminho da Santidade</span> oferece.
+          <p className="text-foreground/80 font-lora leading-relaxed italic mb-4">
+            Se você continuar como está, sua vida espiritual continuará sem constância. Mas com um caminho guiado, você pode rezar todos os dias, fazer novenas completas e sentir mais paz na sua vida.
           </p>
         </div>
+
+        {/* CTA 1 — após diagnóstico */}
+        <CtaBlock onCheckout={handleCheckout} />
 
         {/* Mockup do Produto */}
         <div className="sacred-card mb-8 text-center">
@@ -179,22 +191,14 @@ const ResultScreen = ({ userName }: ResultScreenProps) => {
           </div>
         </div>
 
-        {/* CTA after benefits */}
-        <div className="text-center mb-10">
-          <button
-            onClick={handleCheckout}
-            className="btn-cta animate-pulse-glow font-cinzel text-lg md:text-xl w-full max-w-md"
-          >
-            Quero Iniciar Meu Caminho com Deus
-          </button>
-          <div className="mt-3">
-            <p className="text-foreground/50 text-sm line-through">De R$97</p>
-            <p className="text-gold font-cinzel text-xl font-bold">por apenas R$47,00</p>
-          </div>
-        </div>
+        {/* CTA 2 — após benefícios */}
+        <CtaBlock onCheckout={handleCheckout} />
 
         {/* Depoimentos */}
         <TestimonialsCarousel onCheckout={handleCheckout} />
+
+        {/* CTA 3 — após depoimentos */}
+        <CtaBlock onCheckout={handleCheckout} />
 
         {/* Garantia */}
         <div className="sacred-card mb-8 text-center">
@@ -230,7 +234,7 @@ const ResultScreen = ({ userName }: ResultScreenProps) => {
           <FAQ />
         </div>
 
-        {/* Final CTA */}
+        {/* CTA 4 — após FAQ (final) */}
         <div className="text-center pb-8">
           <button
             onClick={handleCheckout}
@@ -243,7 +247,7 @@ const ResultScreen = ({ userName }: ResultScreenProps) => {
             <p className="text-gold font-cinzel text-2xl font-bold">por apenas R$47,00</p>
           </div>
           <p className="text-foreground/50 text-sm mt-3">
-            🔒 Compra 100% segura • Acesso imediato
+            🔒 Compra segura • Acesso imediato • Garantia de 7 dias
           </p>
         </div>
 
