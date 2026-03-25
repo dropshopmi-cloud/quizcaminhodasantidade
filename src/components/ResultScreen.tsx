@@ -66,7 +66,7 @@ const CtaBlock = ({ onCheckout }: { onCheckout: () => void }) => (
       onClick={onCheckout}
       className="btn-cta animate-pulse-glow font-cinzel text-lg md:text-xl w-full max-w-md"
     >
-      Quero Iniciar Meu Caminho com Deus
+      QUERO FORTALECER MINHA FÉ AGORA
     </button>
     <div className="mt-3">
       <p className="text-foreground/50 text-sm line-through">De R$97</p>
@@ -240,7 +240,7 @@ const ResultScreen = ({ userName }: ResultScreenProps) => {
             onClick={handleCheckout}
             className="btn-cta animate-pulse-glow font-cinzel text-lg w-full max-w-md"
           >
-            Quero Iniciar Meu Caminho com Deus
+            QUERO FORTALECER MINHA FÉ AGORA
           </button>
           <div className="mt-4">
             <p className="text-foreground/50 text-sm line-through">De R$97</p>
